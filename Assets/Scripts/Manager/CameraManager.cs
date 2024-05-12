@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    [SerializeField] private GameObject[] target;
+    [SerializeField] private GameObject target;
     [SerializeField] private float cameraSpeed;
     private Vector3 targetPos;
 
     private void LateUpdate()
     {
+        if (target == null)
+        {
+            target = GameObject.FindGameObjectWithTag("Player");
+        }
+
         if (target.gameObject != null)
         {
             targetPos.Set(target.transform.position.x, target.transform.position.y, this.transform.position.z);
