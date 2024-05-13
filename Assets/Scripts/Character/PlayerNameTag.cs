@@ -10,7 +10,7 @@ public class PlayerNameTag : MonoBehaviour
         nameTag.text = PlayerPrefs.GetString("PlayerName");
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         nameTag.transform.position = transform.position+ Vector3.up;
     }

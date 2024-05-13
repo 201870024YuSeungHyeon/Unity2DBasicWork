@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,13 +9,16 @@ public class CharacterManager : MonoBehaviour
     public CharacterDatabase characterDB;
     public GameObject selectPanel;
 
-    
+ 
     public Image artworkSprite;
 
     private int selectedOption = 0;
+    
 
     private void Start()
     {
+       
+        
         if (!PlayerPrefs.HasKey("selectedOption"))
         {
             selectedOption = 0;
@@ -70,6 +74,13 @@ public class CharacterManager : MonoBehaviour
         PlayerPrefs.SetInt("selectedOption",selectedOption);
         selectPanel.SetActive(false); ;
         
+    }
+    public void InGameChangeChar()
+    {
+        PlayerPrefs.SetInt("selectedOption", selectedOption);
+        GameManager.Instance.DestroyCharacter();
+        GameManager.Instance.GenerateCharacterInGame(selectedOption);
+               
     }
 
 }

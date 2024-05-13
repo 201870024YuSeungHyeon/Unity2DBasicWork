@@ -12,9 +12,9 @@ public class PlayerNameInput : MonoBehaviour
     [SerializeField] private Button joinBtn;
     [SerializeField] private Text nameTag;
     
-
     private void Start()
     {
+       
         joinBtn.interactable = false;
         nameInputField.onValueChanged.AddListener(delegate { ValidateInput(nameInputField.text); });
        
@@ -36,9 +36,18 @@ public class PlayerNameInput : MonoBehaviour
     }
 
     public void JoinGame()
-    {
+    {       
         PlayerPrefs.SetString("PlayerName",nameInputField.text);
         SceneManager.LoadScene("MainScene");
+    } 
+
+    public void InGameNameChange()
+    {
+        string newName = nameInputField.text;
+        PlayerPrefs.SetString("PlayerName", newName);
+        nameTag.text = PlayerPrefs.GetString("PlayerName",newName);
+        GameManager.Instance.DestroyCharacter();
+        GameManager.Instance.GenerateCharacterInGame(GameManager.Instance.selectedOption);
     }
 
    

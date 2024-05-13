@@ -11,8 +11,10 @@ public class GameManager : MonoBehaviour
     public Transform Player { get; private set; }
 
     public CharacterDatabase characterDB;
-    private int selectedOption = 0;
+    public int selectedOption = 0;
     public GameObject[] playerPrefabs;
+
+    private GameObject currentCharacter;
 
     public Text timeTxt;
 
@@ -62,12 +64,36 @@ public class GameManager : MonoBehaviour
         selectedOption = PlayerPrefs.GetInt("selectedOption");
     }
 
-    private void GenerateCharacter(int selectedOption)
+    public void GenerateCharacter(int selectedOption)
     {
-        //Character character = characterDB.GetCharacter(selectedOption);
-        Vector3 spawnPosition = new Vector3(0, 0, 0);
-        Quaternion spawnRotation = Quaternion.identity;
-        Instantiate(playerPrefabs[selectedOption], spawnPosition, spawnRotation);
+        if (currentCharacter == null)
+        {
+            Vector3 spawnPosition = new Vector3(0, 0, 0);
+            Quaternion spawnRotation = Quaternion.identity;
+            currentCharacter = Instantiate(playerPrefabs[selectedOption], spawnPosition, spawnRotation);
+        }
+       
+    }
+
+    public void GenerateCharacterInGame(int selectedOption)
+    {
+        if (currentCharacter == null)
+        {
+            Load();
+           
+            Vector3 spawnPosition = Player.transform.position;
+            Quaternion spawnRotation = Quaternion.identity;
+            currentCharacter = Instantiate(playerPrefabs[selectedOption], spawnPosition, spawnRotation);
+        }
+    }
+
+   public void DestroyCharacter()
+    {
+        if(currentCharacter != null)
+        {
+            Destroy(currentCharacter);
+            currentCharacter = null;
+        }
     }
 
 }
