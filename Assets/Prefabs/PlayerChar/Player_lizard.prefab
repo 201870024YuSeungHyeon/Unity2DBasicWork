@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 1252762170395839231}
   - component: {fileID: 7505630420422654101}
   - component: {fileID: 6118809467662660250}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player_lizard
   m_TagString: Player
   m_Icon: {fileID: 0}

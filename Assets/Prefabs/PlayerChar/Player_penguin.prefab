@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 2471629901164133267}
   - component: {fileID: 8954421681046163776}
   - component: {fileID: 5668660738731952397}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player_penguin
   m_TagString: Player
   m_Icon: {fileID: 0}
