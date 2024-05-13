@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     public Text timeTxt;
 
+    
+
     private void Awake()
     {
         if (Instance != null)
@@ -27,10 +29,7 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-    }
-
-    private void Start()
-    {
+        
         if (!PlayerPrefs.HasKey("selectedOption"))
         {
             selectedOption = 0;
@@ -41,6 +40,11 @@ public class GameManager : MonoBehaviour
         }
 
         GenerateCharacter(selectedOption);
+    }
+
+    private void Start()
+    {
+       
     }
 
 
@@ -96,4 +100,5 @@ public class GameManager : MonoBehaviour
         }
     }
 
+  
 }
