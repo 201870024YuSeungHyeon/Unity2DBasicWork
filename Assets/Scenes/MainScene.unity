@@ -13654,8 +13654,11 @@ PrefabInstance:
       objectReference: {fileID: 1726148878}
     - target: {fileID: 7988249386223582786, guid: c73687a5fbeb27148ac290206713b9ae, type: 3}
       propertyPath: dialogue.Array.data[0]
-      value: "\uAC00\uB098\uB2E4\uB77C\uB9C8\uBC14\uC0AC\uC544\uC790\uCC28\uCE74\uD0C0\uD30C\uD558
-        \uC5D0\uD5E4\uC774 \uC608 \uC6B0\uC608\uC6B0\uC608\uC6B0\uC6B0"
+      value: "\uC548\uB155 \uB0B4 \uC774\uB984\uC740 \uC758\uC0AC\uC57C."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988249386223582786, guid: c73687a5fbeb27148ac290206713b9ae, type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: "\uB300\uD654 \uAE30\uB2A5\uAD6C\uD604\uC5D0 \uC131\uACF5\uD588\uC5B4!"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
